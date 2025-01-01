@@ -17,8 +17,10 @@ Logging in for the first time is troublesome, but after that, it will automatica
 - https://emojipedia.org/
 
 
-![](https://img.shields.io/badge/version-v0.4-green?style=for-the-badge)
-[![](https://img.shields.io/badge/download-click-blue?style=for-the-badge)](https://github.com/alanhg/alfred-workflows/raw/master/find-my-iphone/Find%20iPhone.alfredworkflow)
+
+[![](https://img.shields.io/badge/version-v0.4-green?style=for-the-badge)](https://img.shields.io/badge/version-v0.4-green?style=for-the-badge)
+[![](https://img.shields.io/badge/download-click-blue?style=for-the-badge)](https://github.com/alanhe421/alfred-workflows/raw/master/find-my-iphone/Find%20iPhone.alfredworkflow)
+
 
 
 
@@ -27,7 +29,7 @@ Logging in for the first time is troublesome, but after that, it will automatica
 
 just input `findmy`
 
-![](./screenshot.gif)
+![](screenshots/screenshot.gif)
 
 - ⌥ ⏎ Send alert
 - ⌘ ⏎ view iCloud Web

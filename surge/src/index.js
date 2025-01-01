@@ -1,13 +1,14 @@
-const { utils } = require('@stacker/alfred-utils');
-const { checkUpdate } = require('@stacker/alfred-utils/dist/alfred-cli-check');
+const {utils,Workflow} = require('@stacker/alfred-utils');
 const [, , HTTP_API] = process.argv;
 const instance = require('./axios').createHttpClient(HTTP_API);
+const wf=new Workflow();
 const getSystemProxy = new Promise((resolve, reject) => {
   instance
     .get('/v1/features/system_proxy')
     .then((res) => {
       resolve({
         title: 'System Proxy',
+        // uid: 'System Proxy',
         subtitle: res.data.enabled ? 'enabled' : 'disabled',
         arg: utils.joinMultiArg('systemproxy', !res.data.enabled)
       });
@@ -21,6 +22,7 @@ const getEnhancedMode = new Promise((resolve) => {
     .then((res) => {
       resolve({
         title: 'Enhanced Mode',
+        // uid: 'Enhanced Mode',
         subtitle: res.data.enabled ? 'enabled' : 'disabled',
         arg: utils.joinMultiArg(`enhancedmode`, !res.data.enabled)
       });
@@ -32,6 +34,7 @@ const getMitmFeature = new Promise((resolve) => {
   instance.get('/v1/features/mitm').then((res) => {
     resolve({
       title: 'MitM',
+      // uid: 'MitM',
       subtitle: res.data.enabled ? 'enabled' : 'disabled',
       arg: utils.joinMultiArg('mitm', !res.data.enabled)
     });
@@ -42,6 +45,7 @@ const getCaptureFeature = new Promise((resolve) => {
   instance.get('/v1/features/capture').then((res) => {
     resolve({
       title: 'HTTP Capture',
+      // uid: 'HTTP Capture',
       subtitle: res.data.enabled ? 'enabled' : 'disabled',
       arg: utils.joinMultiArg('capture', !res.data.enabled)
     });
@@ -54,6 +58,7 @@ const getRewriteFeature = new Promise((resolve) => {
     .then((res) => {
       resolve({
         title: 'Rewrite',
+        // uid: 'Rewrite',
         subtitle: res.data.enabled ? 'enabled' : 'disabled',
         arg: utils.joinMultiArg('rewrite', !res.data.enabled)
       });
@@ -67,6 +72,7 @@ const getScriptingFeature = new Promise((resolve) => {
     .then((res) => {
       resolve({
         title: 'Scripting',
+        // uid: 'Scripting',
         subtitle: res.data.enabled ? 'enabled' : 'disabled',
         arg: utils.joinMultiArg('scripting', !res.data.enabled)
       });
@@ -79,9 +85,7 @@ const getOutboundMode = new Promise((resolve) => {
     .get('/v1/outbound')
     .then((res) => {
       resolve({
-        title: 'Outbound Mode',
-        subtitle: res.data.mode,
-        arg: utils.joinMultiArg('outboundmode')
+        title: 'Outbound Mode', subtitle: res.data.mode, arg: utils.joinMultiArg('outboundmode')
       });
     })
     .catch((e) => reject(e));
@@ -90,24 +94,24 @@ const getOutboundMode = new Promise((resolve) => {
 const getReloadProfile = new Promise((resolve) => {
   resolve({
     title: 'Reload Profile',
-    subtitle: '',
-    arg: 'reloadProfile'
+    // uid: 'Reload Profile',
+    subtitle: '', arg: 'reloadProfile'
   });
 });
 
 const getDNS = new Promise((resolve) => {
   resolve({
     title: 'DNS',
-    subtitle: '',
-    arg: 'dns'
+    // uid: 'DNS',
+     subtitle: '', arg: 'dns'
   });
 });
 
 const getPolicyGroups = new Promise((resolve) => {
   resolve({
     title: 'Policy Groups',
-    subtitle: '',
-    arg: 'policyGroups'
+    // uid: 'Policy Groups',
+     subtitle: '', arg: 'policyGroups'
   });
 });
 
@@ -117,6 +121,7 @@ const getProfiles = new Promise((resolve) => {
     .then((res) => {
       resolve({
         title: 'Profiles',
+        // uid: 'Profiles',
         subtitle: `${res.data.name} ${utils.emoji.checked} , ⏎ to switch profile`,
         arg: 'profiles'
       });
@@ -127,65 +132,55 @@ const getProfiles = new Promise((resolve) => {
 const getModules = new Promise((resolve) => {
   resolve({
     title: 'Module',
-    subtitle: 'override the current profiles',
-    arg: 'module'
+    //  uid: 'Module',
+     subtitle: 'override the current profiles', arg: 'module'
   });
 });
 
 const getRules = new Promise((resolve) => {
   resolve({
     title: 'Rules',
-    subtitle: 'Obtain the list of rules',
-    arg: 'rules'
+    // uid: 'Rules',
+    subtitle: 'Obtain the list of rules', arg: 'rules'
   });
 });
 
 const getLog = new Promise((resolve) => {
   resolve({
     title: 'Log',
-    subtitle: 'Dynamically modify Log Level without writing to conf file',
-    arg: 'log'
+    // uid: 'Log',
+    subtitle: 'Dynamically modify Log Level without writing to conf file', arg: 'log'
   });
 });
 
-const printItems = (obj) =>
-  console.log(
-    JSON.stringify({
-      items: Array.isArray(obj) ? obj : [obj]
-    })
-  );
+const printItems = (obj) => console.log(JSON.stringify({
+  items: Array.isArray(obj) ? obj : [obj]
+}));
 
-Promise.all([
-  checkUpdate(),
-  getSystemProxy,
-  getEnhancedMode,
-  getMitmFeature,
-  getCaptureFeature,
-  getRewriteFeature,
-  getScriptingFeature,
-  getOutboundMode,
-  getReloadProfile,
-  getDNS,
-  getProfiles,
-  getPolicyGroups,
-  getModules,
-  getRules,
-  getLog
-])
+Promise.all([getSystemProxy, getEnhancedMode, getMitmFeature, getCaptureFeature, getRewriteFeature, getScriptingFeature, getOutboundMode, getReloadProfile, getDNS, getProfiles, getPolicyGroups, getModules, getRules, getLog])
   .then(([updateItem, ...res]) => {
     if (updateItem) {
       res.unshift(updateItem);
     }
-    utils.outputScriptFilter({
-      items: res
+    res.forEach((item) => {
+      wf.addWorkflowItem({item});
     });
+    wf.run();
   })
   .catch((e) => {
-    printItems({
-      title: 'You should enable HTTP API',
-      subtitle: 'Press enter to config',
-      arg: 'httpApi'
-    });
+    if (e.isAxiosError) {
+      printItems({
+        title: 'HTTP API meet wrong', subtitle: e.message, arg: 'httpApi', text: {
+          copy: e.message, largetype: e.message
+        }
+      });
+    } else {
+      printItems({
+        title: 'Something Wrong', subtitle: e.toString(), arg: e.toString(), text: {
+          copy: e.toString(), largetype: e.toString()
+        }
+      });
+    }
   });
 module.exports = {
   axios: instance

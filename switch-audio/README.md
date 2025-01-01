@@ -1,16 +1,18 @@
 Easy to switch audio/list camera.
 
 
-Support Monterey 12.0.1
+Support Monterey 12.0.1,Does not support Ventura/Sonoma
 
 
 ## Requirement
 
-If you need camera command, just brew install node
+brew install node
 
 
-![](https://img.shields.io/badge/version-v2.2-green?style=for-the-badge)
-[![](https://img.shields.io/badge/download-click-blue?style=for-the-badge)](https://github.com/alanhg/alfred-workflows/raw/master/switch-audio/Switch%20Audio.alfredworkflow)
+
+[![](https://img.shields.io/badge/version-v2.3-green?style=for-the-badge)](https://img.shields.io/badge/version-v2.3-green?style=for-the-badge)
+[![](https://img.shields.io/badge/download-click-blue?style=for-the-badge)](https://github.com/alanhe421/alfred-workflows/raw/master/switch-audio/Switch%20Audio.alfredworkflow)
+
 
 
 
@@ -20,7 +22,7 @@ If you need camera command, just brew install node
 
 just input `sound` or `voice`
 
-![](./screenshot.gif)
+![](screenshots/screenshot.gif)
 
 support switch to airplay
 

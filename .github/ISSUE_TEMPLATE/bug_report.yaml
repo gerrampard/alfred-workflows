@@ -1,0 +1,122 @@
+name: Bug report
+description: Create a report to help us improve. 支持中文。
+title: "[Bug]: "
+labels: ["bug"]
+assignees:
+ - alanhg
+body:
+ - type: markdown
+   attributes:
+     value: |
+         Thanks for taking the time to fill out this bug report!
+         Open the [debugger](https://www.alfredapp.com/help/workflows/advanced/debugger/), set the log output to “All Information”, do your action, and post the output .If possible, please also endeavor to provide a screenshot of the workflow.
+ - type: textarea
+   id: what-happened
+   attributes:
+     label: Describe the bug
+     description: |
+        What the bug is. Clear Steps of description and screenshot is welcome.
+   validations:
+    required: true
+ - type: dropdown
+   id: workflow-name
+   attributes:
+     label: Workflow Name
+     description: >
+       Confirm the latest workflow used.
+     options:
+       - 2FA-Read Code
+       - About Mac
+       - Airdrop
+       - AppID
+       - AppleScript Tools
+       - Batch Import Workflows
+       - Bluetooth Manager
+       - Brightness Control
+       - ChatGPT Enhancer
+       - Clipboard History
+       - Compress
+       - ConvertIO
+       - Copy Files to The frontmost Finder
+       - DO NOT DISTURB
+       - Eudic Tools
+       - File Enhancer
+       - Find iPhone
+       - Giphy
+       - Git Code
+       - Resize Image
+       - IP Tools
+       - JSON View
+       - Json2TS
+       - Local Network
+       - Mac Enhancer
+       - Medium Tools
+       - Meeting
+       - Mount Volume
+       - Multimedia Convert
+       - My iPhones
+       - New File
+       - OCR
+       - Open Chrome Profile
+       - OpenConnect VPN
+       - Paste into files
+       - PDF Converter
+       - Pic Uploader
+       - Process
+       - ProgressBar
+       - QR Reader
+       - Generate Image
+       - Alfred Remote
+       - RGB-Hex converter
+       - SQL Formatter
+       - SSH Utils
+       - String Manipulation
+       - Surge
+       - Switch Audio
+       - System Settings
+       - Translate
+       - Type Search
+       - UAParser
+       - video
+       - Whistle
+       - 印象笔记
+
+   validations:
+     required: true
+ - type: input
+   id: alfred-version
+   attributes:
+     label: Alfred Version
+     placeholder: e.g. v4.6.5
+   validations:
+     required: true
+ - type: dropdown
+   id: mac-os-version
+   attributes:
+     label: MacOS Version
+     options:
+      - macOS 11 Big Sur and ago
+      - macOS 12 Monterey
+      - macOS 13 Ventura
+      - macOS 14 Sonoma
+   validations:
+     required: true
+ - type: dropdown
+   id: mac-chip
+   attributes:
+     label: Mac Chip
+     options:
+       - Intel
+       - Apple Silicon (like M1, M2)
+   validations:
+     required: true
+ - type: dropdown
+   id: mac-os-locale
+   attributes:
+     label: MacOS Locale
+     options:
+       - EN
+       - CN-中文
+       - Others
+   validations:
+     required: false

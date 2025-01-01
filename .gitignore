@@ -4,3 +4,7 @@ node_modules
 package-lock.json
 yarn.lock
 .DS_Store
+prefs.plist
+/.docs/workflows
+.docs/.vitepress/dist
+/.docs/.vitepress/cache/

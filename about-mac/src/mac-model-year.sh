@@ -1,3 +1,7 @@
 #!/bin/bash
-SN=`system_profiler SPHardwareDataType | awk '/Serial/ {print $4}'`
-curl https://support-sp.apple.com/sp/product\?cc\=${SN:0-4:4} --silent | sed 's|.*<configCode>\(.*\)</configCode>.*|\1|'
+model=$(uname -m)
+if [[ $model == "arm64" ]]; then
+/usr/libexec/PlistBuddy -c 'Print :0:product-name' /dev/stdin <<< "$(ioreg -arc IOPlatformDevice -k product-name)" 2> /dev/null | tr -cd '[:print:]'
+else
+defaults read ~/Library/Preferences/com.apple.SystemProfiler.plist 'CPU Names' | cut -sd '"' -f 4 | uniq
+fi

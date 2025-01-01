@@ -5,10 +5,23 @@
 	<key>bundleid</key>
 	<string>cn.alanhe.eudic</string>
 	<key>category</key>
-	<string>Productivity</string>
+	<string>Self-Dev</string>
 	<key>connections</key>
 	<dict>
 		<key>1D4602C0-5DDC-4744-B79A-68E9A436D2BA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B31485C7-63E3-4813-A3F9-E0E024258066</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>4EED0387-482F-47F7-A529-41003C2A3AE9</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
@@ -139,6 +152,27 @@ end tell</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>{var:keyword}</string>
+				<key>subtext</key>
+				<string>Show dic with the word</string>
+				<key>text</key>
+				<string>Eudic</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>4EED0387-482F-47F7-A529-41003C2A3AE9</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
@@ -156,7 +190,7 @@ end tell</string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
-				<integer>0</integer>
+				<integer>2</integer>
 				<key>relatedApps</key>
 				<array>
 					<string>com.eusoft.eudic</string>
@@ -190,11 +224,22 @@ end alfred_script</string>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>Use hotkeys to launch actions by pressing a key combination. You can connect one or more actions to be performed.
+	<string># Eudic Tools
+&gt; Hotkeys for triggering some operations in Eudic.
 
-Hotkeys are stripped on import, to ensure that they don't clash with your existing hotkeys, so double-click the object and set your own hotkey.
+## Requirement
 
-A hotkey needs to contain a modifier (Cmd, Ctrl or Alt) and a keyboard character at least, but your best bet is to use slightly less common combinations (e.g. two modifiers) to avoid clashing with default OS X hotkeys or other apps on your Mac.</string>
+install eudic app 
+
+https://www.eudic.net/v4/en/app/download
+
+## Usage
+
+1. support type keyword `eudic` to search word
+2. suport hotkey to search selected word. Recommend set `⌥ ⌘ e`.
+3. support hotkey to speak selected word. Recommend set `⌘ ⇧ s`
+
+For search feat. If it's a sentence, it will automatically enter the Eduic translation.This is the processing logic of the Eudic and cannot be changed.</string>
 	<key>uidata</key>
 	<dict>
 		<key>1D4602C0-5DDC-4744-B79A-68E9A436D2BA</key>
@@ -202,46 +247,77 @@ A hotkey needs to contain a modifier (Cmd, Ctrl or Alt) and a keyboard character
 			<key>note</key>
 			<string>Search copied word</string>
 			<key>xpos</key>
-			<integer>80</integer>
+			<real>80</real>
 			<key>ypos</key>
-			<integer>100</integer>
+			<real>100</real>
+		</dict>
+		<key>4EED0387-482F-47F7-A529-41003C2A3AE9</key>
+		<dict>
+			<key>xpos</key>
+			<real>75</real>
+			<key>ypos</key>
+			<real>300</real>
 		</dict>
 		<key>57EE9397-9A0B-4798-87F8-4CED7C78E470</key>
 		<dict>
 			<key>xpos</key>
-			<integer>295</integer>
+			<real>300</real>
 			<key>ypos</key>
-			<integer>295</integer>
+			<real>515</real>
 		</dict>
 		<key>606BB652-AE3A-4015-9DC4-215BBA26B042</key>
 		<dict>
 			<key>xpos</key>
-			<integer>465</integer>
+			<real>465</real>
 			<key>ypos</key>
-			<integer>100</integer>
+			<real>100</real>
 		</dict>
 		<key>65E11D2E-FC2E-4B45-B58B-E5AF264BFAFE</key>
 		<dict>
 			<key>note</key>
 			<string>One-click pronunciation</string>
 			<key>xpos</key>
-			<integer>75</integer>
+			<real>85</real>
 			<key>ypos</key>
-			<integer>295</integer>
+			<real>515</real>
 		</dict>
 		<key>B31485C7-63E3-4813-A3F9-E0E024258066</key>
 		<dict>
 			<key>xpos</key>
-			<integer>280</integer>
+			<real>280</real>
 			<key>ypos</key>
-			<integer>100</integer>
+			<real>100</real>
 		</dict>
 	</dict>
+	<key>userconfigurationconfig</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string></string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>recommend set eudic as keyword</string>
+			<key>label</key>
+			<string>keyword</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>keyword</string>
+		</dict>
+	</array>
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>1.0</string>
+	<string>1.3</string>
 	<key>webaddress</key>
-	<string>https://1991421.cn</string>
+	<string>https://github.com/alanhg/alfred-workflows/tree/master/eudic-tools</string>
 </dict>
 </plist>

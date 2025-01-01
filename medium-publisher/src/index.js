@@ -2,11 +2,22 @@ const axios = require('axios');
 const fs = require('fs');
 const [, , TOKEN, AUTHOR_ID, FILE] = process.argv;
 const { extractMeta } = require('./hexo-parser');
+const { publishStatus } = process.env;
+
+const statusToPages={
+'draft':'drafts',
+'public':'public',
+'unlisted':'',
+}
 
 function main() {
-  const fileData = fs.readFileSync(FILE, 'utf8');
-  const data = extractMeta(fileData);
-  createPost(data);
+  const files = FILE.split('\t');
+  const fileDatas = files
+    .map((f) => fs.readFileSync(f, 'utf8'))
+    .map(extractMeta);
+  return Promise.all(fileDatas.map((f) => createPost(f))).then((res) => {
+    process.stdout.write(statusToPages[publishStatus]);
+  });
 }
 
 /**
@@ -14,8 +25,7 @@ function main() {
  * 创建Story
  */
 function createPost(data) {
-  axios
-    .post(
+  return axios.post(
       `https://api.medium.com/v1/users/${AUTHOR_ID}/posts`,
       {
         title: data.title,
@@ -25,7 +35,7 @@ function createPost(data) {
         /**
          *  “public”, “draft”, or “unlisted”
          */
-        publishStatus: process.env.publishStatus,
+        publishStatus: publishStatus,
         canonicalUrl: data.canonicalUrl
       },
       {
@@ -35,9 +45,8 @@ function createPost(data) {
       }
     )
     .then(({ data: res }) => {
-      console.log(res.data.url);
-    })
-    .catch(() => {});
+      return res;
+    }).catch(() => {});
 }
 
 main();

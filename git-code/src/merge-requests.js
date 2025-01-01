@@ -2,55 +2,63 @@
  * usage
  * /usr/local/bin/node ./merge-requests.js
  */
-const { utils, http } = require('@stacker/alfred-utils');
+const {utils, http, Workflow} = require('@stacker/alfred-utils');
 const [, , query] = process.argv;
-
+const wf = new Workflow();
 (async function () {
-  const items = await searchMergeRequests(
-    process.env.token,
-    process.env.baseUrl,
-    process.env.projectId,
-    process.env.projectName
+  const items = await searchMergeRequests(process.env);
+  items.map((item) =>
+    wf.addWorkflowItem({
+      item
+    })
   );
-  if (items.length > 0) {
-    utils.printScriptFilter({
-      items: utils.filterItemsBy(items, query, 'title', 'subtitle')
-    });
-  } else {
-    utils.printScriptFilter({
-      items: [
-        utils.buildItem({
-          title: `No Opened Merge Requests for ${process.env.projectName}`,
-          subtitle: `Goto ${process.env.baseUrl}/${process.env.projectName}/merge_requests`,
-          arg: `${process.env.baseUrl}/${process.env.projectName}/merge_requests`
-        })
-      ]
-    });
-  }
+  wf.filterWorkflowItemsBy(query, ['title', 'subtitle'], {
+    item: {
+      title: `No Opened Merge Requests for ${process.env.projectName}`,
+      subtitle: `Goto ${process.env.baseUrl}/${process.env.projectPath}/merge_requests`,
+      arg: `${process.env.baseUrl}/${process.env.projectPath}/merge_requests`
+    }
+  });
+  wf.run();
 })();
 
-async function searchMergeRequests(token, baseUrl, projectId, projectName) {
+async function searchMergeRequests({token, baseUrl, projectId, projectPath}) {
   if (!token || !baseUrl) {
     return [];
   }
   try {
     const instance = http.createHttpClient(baseUrl);
-    const res = await instance.get(
-      `/api/v3/projects/${projectId}/merge_requests`,
-      {
-        params: {
-          private_token: token,
-          per_page: process.env.per_page || 20,
-          state: 'opened'
+    const res = (await Promise.all([
+      instance.get(
+        `/api/v3/projects/${projectId}/merge_requests`,
+        {
+          params: {
+            private_token: token,
+            per_page: process.env.per_page || 20,
+            state: 'opened'
+          }
         }
-      }
-    );
+      ),
+      instance.get(
+        `/api/v3/projects/${projectId}/merge_requests`,
+        {
+          params: {
+            private_token: token,
+            per_page: process.env.per_page || 20,
+            state: 'reopened'
+          }
+        }
+      ),
+    ])).reduce((sum, item) => {
+      sum.data = item.data.concat(sum.data);
+      return sum;
+    }, {data: []})
     if (res.data.length === 0) {
       return [
         utils.buildItem({
           title: `No Opened Merge Requests`,
-          subtitle: `Goto ${baseUrl}/${projectName}/merge_requests`,
-          arg: `${baseUrl}/${projectName}/merge_requests`
+          subtitle: `Goto ${baseUrl}/${projectPath}/merge_requests`,
+          arg: `${baseUrl}/${projectPath}/merge_requests`
         })
       ];
     }
@@ -60,18 +68,20 @@ async function searchMergeRequests(token, baseUrl, projectId, projectName) {
         subtitle: `source:${item.source_branch} ➡️ target:${item.target_branch}`,
         autocomplete: item.title,
         text: {
-          largetype: item.description
+          largetype: item.description,
+          copy: appendFooterCopyText(buildCopyText(baseUrl, projectPath, item)),
         },
-        arg: `${baseUrl}/${projectName}/merge_requests/${item.iid}`
+        arg: `${baseUrl}/${projectPath}/merge_requests/${item.iid}`
       })
     );
 
-    const allMRLinks = res.data
+    let allMRLinks = res.data
       .map(
         (item) =>
-          `- ${item.title}\n  ${baseUrl}/${projectName}/merge_requests/${item.iid}`
+          buildCopyText(baseUrl, projectPath, item)
       )
-      .join('\n');
+      .join('\n\n');
+
     items.unshift(
       utils.buildItem({
         title: 'Copy All MRs',
@@ -79,9 +89,9 @@ async function searchMergeRequests(token, baseUrl, projectId, projectName) {
         autocomplete: 'Copy All MRs',
         text: {
           largetype: allMRLinks,
-          copy: allMRLinks
+          copy: appendFooterCopyText(allMRLinks)
         },
-        arg: `${baseUrl}/${projectName}/merge_requests/`
+        arg: `${baseUrl}/${projectPath}/merge_requests/`
       })
     );
     return items;
@@ -93,4 +103,21 @@ async function searchMergeRequests(token, baseUrl, projectId, projectName) {
       })
     ];
   }
+}
+
+function buildCopyText(baseUrl, projectPath, item) {
+  return process.env.mr_links_copy_text.replace(/{{(.*?)}}/g, function (match, key) {
+    if (key === 'link') {
+      return `${baseUrl}/${projectPath}/merge_requests/${item.iid}`;
+    }
+    return item[key] || match;
+  });
+}
+
+// {var:mr_link_copy_text_footer}
+function appendFooterCopyText(text) {
+  if (process.env.mr_links_copy_text_footer) {
+    text += `\n\n\n${process.env.mr_links_copy_text_footer}`;
+  }
+  return text;
 }

@@ -8,17 +8,22 @@ const query = process.env.module;
       instance.get('/v1/profiles/current').then((res) => res.data.name),
       instance.get('/v1/profiles').then((res) => res.data.profiles)
     ]);
-    utils.outputScriptFilter({
+    utils.printScriptFilter({
       items: profiles.map((item) => ({
         title: item,
         subtitle: item === name ? 'selected' : '',
-        arg: utils.joinMultiArg(`switchProfile`, item)
+        arg: utils.joinMultiArg(`switchProfile`, item),
+        mods:{
+          cmd:{
+            arg:item
+          }
+        }
       }))
     });
     return;
   }
   if (query === 'log') {
-    utils.outputScriptFilter({
+    utils.printScriptFilter({
       items: [
         {
           level: 'warning',

@@ -32,6 +32,16 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>A9745FFC-587E-445F-88A1-052F2B9F0226</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 		</array>
 		<key>50B0CD10-4D52-4898-9C05-DD3A34A829C3</key>
 		<array>
@@ -63,7 +73,7 @@
 	<key>createdby</key>
 	<string>Alan He</string>
 	<key>description</key>
-	<string>Alan He</string>
+	<string>Read authentication code in your recent messages or current clipboard</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
@@ -113,17 +123,17 @@
 				<key>queuemode</key>
 				<integer>1</integer>
 				<key>runningsubtext</key>
-				<string>reading</string>
+				<string>Reading</string>
 				<key>script</key>
-				<string>/usr/local/bin/node ./index.js</string>
+				<string>node ./index.js list</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
-				<string>test.sh</string>
+				<string></string>
 				<key>subtext</key>
-				<string>find authentication code</string>
+				<string>Find authentication code</string>
 				<key>title</key>
-				<string>read code from Message</string>
+				<string>Read code from Message</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -158,6 +168,8 @@
 				</array>
 				<key>elselabel</key>
 				<string>else</string>
+				<key>hideelse</key>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
@@ -206,65 +218,122 @@
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>node ./index.js read</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>A9745FFC-587E-445F-88A1-052F2B9F0226</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
 	</array>
 	<key>readme</key>
-	<string>&gt; Read authentication code in your recent messages
+	<string># 2FA-Read Code
+
+&gt; Read authentication code in your recent messages or current clipboard
 
 1. Type `2fa` to trigger workflow
 2. Type`⌘ C` or `⏎` to copy captcha
 
-## requirement
+## Requirement
 
 1. `brew install node`
-2. Alfred has permission to `Full Disk Access`</string>
+2. Alfred has permission to `Full Disk Access`
+3. sqlite3 &gt;=v3.33.0
+
+
+## Big Sur Issue
+
+update sqlite by brew</string>
 	<key>uidata</key>
 	<dict>
 		<key>26DC9FDD-521B-4837-8A52-0351B2C1ABEF</key>
 		<dict>
 			<key>xpos</key>
-			<integer>245</integer>
+			<real>245</real>
 			<key>ypos</key>
-			<integer>75</integer>
+			<real>75</real>
 		</dict>
 		<key>50B0CD10-4D52-4898-9C05-DD3A34A829C3</key>
 		<dict>
 			<key>xpos</key>
-			<integer>70</integer>
+			<real>70</real>
 			<key>ypos</key>
-			<integer>50</integer>
+			<real>50</real>
 		</dict>
 		<key>59FACEBF-8E54-4ED8-8978-2E2701470C14</key>
 		<dict>
 			<key>xpos</key>
-			<integer>620</integer>
+			<real>600</real>
 			<key>ypos</key>
-			<integer>220</integer>
+			<real>375</real>
+		</dict>
+		<key>A9745FFC-587E-445F-88A1-052F2B9F0226</key>
+		<dict>
+			<key>xpos</key>
+			<real>385</real>
+			<key>ypos</key>
+			<real>520</real>
 		</dict>
 		<key>B551E16A-99ED-4CFD-9FA2-BF5DE3680187</key>
 		<dict>
 			<key>xpos</key>
-			<integer>400</integer>
+			<real>400</real>
 			<key>ypos</key>
-			<integer>45</integer>
+			<real>45</real>
 		</dict>
 		<key>DDD1D4C2-BC2D-4E83-9029-EE6A670EAFF9</key>
 		<dict>
 			<key>xpos</key>
-			<integer>410</integer>
+			<real>390</real>
 			<key>ypos</key>
-			<integer>220</integer>
+			<real>375</real>
 		</dict>
 	</dict>
-	<key>variables</key>
-	<dict>
-		<key>look_back_minutes</key>
-		<string>10</string>
-	</dict>
+	<key>userconfigurationconfig</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>10</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>Look back minutes</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>look_back_minutes</string>
+		</dict>
+	</array>
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>0.5</string>
+	<string>1.14</string>
 	<key>webaddress</key>
-	<string>https://1991421.cn</string>
+	<string>https://github.com/alanhg/alfred-workflows/tree/master/2fa-read-code</string>
 </dict>
 </plist>

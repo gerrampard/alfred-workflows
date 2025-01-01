@@ -1,21 +1,35 @@
-Get the text in the screenshot to the clipboard
+# OCR
+> Activate OCR keywords, select the screen area, and press Enter to immediately obtain the text.
 
-First run this command on a terminal:
+Use the built-in OCR, no need to install dependencies.
 
-1. brew install pngpaste
-2. npm install baidu-aip-sdk -g
+1. support hotkey trigger, recommend setting the hotkey to `⌘ ⇧ 7`.
+2. type keyword `ocr` to trigger
 
 
-![](https://img.shields.io/badge/version-v1.1-green?style=for-the-badge)
-[![](https://img.shields.io/badge/download-click-blue?style=for-the-badge)](https://github.com/alanhg/alfred-workflows/raw/master/ocr/OCR.alfredworkflow)
+
+[![](https://img.shields.io/badge/version-v3.1-green?style=for-the-badge)](https://img.shields.io/badge/version-v3.1-green?style=for-the-badge)
+[![](https://img.shields.io/badge/download-click-blue?style=for-the-badge)](https://github.com/alanhe421/alfred-workflows/raw/master/ocr/OCR.alfredworkflow)
+[![](https://img.shields.io/badge/Install%20In%20Alfred-8A2BE2?style=for-the-badge)](https://alfred.app/workflows/alanhe/ocr/install/)
 
 
 
 <!-- more -->
 
-登陆百度智能云，选择文本识别，创建应用,将高亮的三个值配置在workflow中即可。
-![](./screenshort.png)
-
 ## 效果
-![](./demo.gif)
+![](screenshots/screenshot.gif)
 
+## First-time use
+
+In addition to this, when using it, you will be prompted to install shortcuts. Install it.
+
+![screenshot1.png](screenshots/screenshot1.png)
+
+When re-triggering the ocr, there will be a permission authorization box as follows. Click allow, and then you can use it normally.
+
+![screenshot2.png](screenshots/screenshot2.png)
+
+## Hotkey
+You can change it in the workflow settings. Recommend setting the hotkey to `⌘ ⇧ 7`.
+
+![screenshot4.png](screenshots/screenshot4.png)

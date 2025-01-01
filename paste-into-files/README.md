@@ -1,25 +1,23 @@
-paste into files
+> paste into files
 
-1. paste into image file with jpeg suffix
+1. paste into image file with jpeg or png suffix, support user configuration
+2. paste into files from url
+
+## requirement
+
+`brew install pngpaste`
 
 
-## install
 
-1. brew install pngpaste
+[![](https://img.shields.io/badge/version-v1.2-green?style=for-the-badge)](https://img.shields.io/badge/version-v1.2-green?style=for-the-badge)
+[![](https://img.shields.io/badge/download-click-blue?style=for-the-badge)](https://github.com/alanhe421/alfred-workflows/raw/master/paste-into-files/Paste%20into%20files.alfredworkflow)
 
-
-![](https://img.shields.io/badge/version-v1.0-green?style=for-the-badge)
-[![](https://img.shields.io/badge/download-click-blue?style=for-the-badge)](https://github.com/alanhg/alfred-workflows/raw/master/paste-into-files/Paste%20into%20files.alfredworkflow)
 
 
 
 <!-- more -->
-> 剪贴板中的内容保存为文件，当前仅支持图片
 
-
-[![](https://img.shields.io/badge/version-v1.0-green)](./Paste%20into%20files.alfredworkflow)
-
-![](./screenshot.gif)
+![](screenshots/screenshot.gif)
 
 ## Install
 

@@ -3,14 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test.js"
   },
   "author": "",
   "license": "MIT",
   "description": "",
   "dependencies": {
-    "@stacker/alfred-utils": "^0.1.41",
-    "q": "^1.5.1",
-    "sqlite3": "^5.0.2"
+    "@stacker/alfred-utils": "^0.1.57"
   }
 }

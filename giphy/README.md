@@ -5,8 +5,10 @@ Easy to search gif and copy to anywhere.
 1. install node
 
 
-![](https://img.shields.io/badge/version-v1.2-green?style=for-the-badge)
-[![](https://img.shields.io/badge/download-click-blue?style=for-the-badge)](https://github.com/alanhg/alfred-workflows/raw/master/giphy/Giphy.alfredworkflow)
+
+[![](https://img.shields.io/badge/version-v1.2-green?style=for-the-badge)](https://img.shields.io/badge/version-v1.2-green?style=for-the-badge)
+[![](https://img.shields.io/badge/download-click-blue?style=for-the-badge)](https://github.com/alanhe421/alfred-workflows/raw/master/giphy/Giphy.alfredworkflow)
+
 
 
 
@@ -19,7 +21,7 @@ Easy to search gif and copy to anywhere.
 
 ## 当前效果
 
-![](./screenshot.gif)
+![](screenshots/screenshot.gif)
 
 ## 注意
 - 因为已知原因，中国大陆需要走代理才可正常使用

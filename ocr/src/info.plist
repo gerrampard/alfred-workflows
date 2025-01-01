@@ -8,74 +8,103 @@
 	<string>Self-Dev</string>
 	<key>connections</key>
 	<dict>
-		<key>02490CE9-13B5-4DF2-8925-51959002C029</key>
+		<key>4048A283-459F-41D6-8536-FB4A566BA632</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>9EE38889-E5FF-4F8B-9808-748DFEEEACD8</string>
+				<string>E9A9E33F-4D94-4AF5-BC40-38C018B27927</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>763B39BE-E24D-4449-A0E3-C2E2021623EC</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>85F97DB5-3EC6-4AE2-BD8A-E53075B998BF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>85F97DB5-3EC6-4AE2-BD8A-E53075B998BF</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D5973360-B453-4F19-BEC6-695832FF1756</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>A2E6CA5F-BA54-489F-A6E2-A97F223F3F72</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4048A283-459F-41D6-8536-FB4A566BA632</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>D5973360-B453-4F19-BEC6-695832FF1756</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D1CABD85-A795-45F0-B22D-BE7AB8B76884</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 				<key>sourceoutputuid</key>
-				<string>429A869E-BAA7-4EAB-BB5F-30B2D51D8E02</string>
+				<string>10800F7B-3F08-4143-BE36-26AA026B629D</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>A2E6CA5F-BA54-489F-A6E2-A97F223F3F72</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>33C8F2C3-5022-45E1-9BCE-BB018EB24E5C</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>DE89967F-43E5-4EEC-8F93-059E5BA1FB96</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>85F97DB5-3EC6-4AE2-BD8A-E53075B998BF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>E9A9E33F-4D94-4AF5-BC40-38C018B27927</key>
+		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>C0F55B7B-E2B9-4FF2-972C-E1E1FEC24322</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>1017A5FC-CE01-4FE6-982B-3E281E571C46</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>1017A5FC-CE01-4FE6-982B-3E281E571C46</key>
-		<array/>
-		<key>763B39BE-E24D-4449-A0E3-C2E2021623EC</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>C67E2790-A8FC-4FBC-8FE7-2A5CD9D012ED</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>9EE38889-E5FF-4F8B-9808-748DFEEEACD8</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>7FA8077C-0313-4570-8753-BEA7E7026A7B</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>C67E2790-A8FC-4FBC-8FE7-2A5CD9D012ED</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>02490CE9-13B5-4DF2-8925-51959002C029</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -98,69 +127,34 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<true/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>OCR failed</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>7FA8077C-0313-4570-8753-BEA7E7026A7B</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>matchmode</key>
-				<integer>1</integer>
-				<key>matchstring</key>
-				<string>^error_msg</string>
-				<key>regexcaseinsensitive</key>
-				<false/>
-				<key>regexmultiline</key>
-				<false/>
-				<key>replacestring</key>
+				<key>openwith</key>
 				<string></string>
+				<key>sourcefile</key>
+				<string>OCR-v3.shortcut</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.utility.replace</string>
+			<string>alfred.workflow.action.openfile</string>
 			<key>uid</key>
-			<string>9EE38889-E5FF-4F8B-9808-748DFEEEACD8</string>
+			<string>D1CABD85-A795-45F0-B22D-BE7AB8B76884</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
 				<key>argumenttype</key>
 				<integer>2</integer>
-				<key>fixedorder</key>
-				<false/>
-				<key>items</key>
-				<string>[{"title":"OCR-Default","arg":"CHN_ENG","subtitle":"中英文混合"},{"title":"OCR-ENG","arg":"ENG","subtitle":"英文"},{"title":"OCR-POR","arg":"POR","subtitle":"葡萄牙语"},{"title":"OCR-FRE","arg":"FRE","subtitle":"法语"},{"title":"OCR-GER","arg":"GER","subtitle":"德语"},{"title":"OCR-ITA","arg":"ITA","subtitle":"意大利语"},{"title":"OCR-SPA","arg":"SPA","subtitle":"西班牙语"},{"title":"OCR-RUS","arg":"RUS","subtitle":"俄语"},{"title":"OCR-JAP","arg":"JAP","subtitle":"日语"},{"title":"OCR-KOR","arg":"KOR","subtitle":"韩语"}]</string>
 				<key>keyword</key>
 				<string>ocr</string>
-				<key>runningsubtext</key>
-				<string></string>
 				<key>subtext</key>
 				<string>Get the text in the screenshot to the clipboard</string>
-				<key>title</key>
+				<key>text</key>
 				<string>OCR</string>
 				<key>withspace</key>
 				<false/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.listfilter</string>
+			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
 			<string>763B39BE-E24D-4449-A0E3-C2E2021623EC</string>
 			<key>version</key>
@@ -169,27 +163,20 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>/usr/local/bin/pngpaste ./temp.png
-
-/usr/local/bin/node ./index.js $APP_ID $API_KEY $SECRET_KEY {query}</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
+				<key>tasksettings</key>
+				<dict>
+					<key>target_shortcut</key>
+					<string>OCR-v3</string>
+				</dict>
+				<key>taskuid</key>
+				<string>com.alfredapp.automation.core/shortcuts/shortcut.installed</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.automation.task</string>
 			<key>uid</key>
-			<string>C67E2790-A8FC-4FBC-8FE7-2A5CD9D012ED</string>
+			<string>85F97DB5-3EC6-4AE2-BD8A-E53075B998BF</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -202,24 +189,115 @@
 						<key>matchcasesensitive</key>
 						<false/>
 						<key>matchmode</key>
-						<integer>4</integer>
+						<integer>6</integer>
 						<key>matchstring</key>
-						<string>^error_msg</string>
-						<key>outputlabel</key>
 						<string></string>
+						<key>outputlabel</key>
+						<string>Missing Shortcut</string>
 						<key>uid</key>
-						<string>429A869E-BAA7-4EAB-BB5F-30B2D51D8E02</string>
+						<string>10800F7B-3F08-4143-BE36-26AA026B629D</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string></string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>5</integer>
+						<key>matchstring</key>
+						<string></string>
+						<key>outputlabel</key>
+						<string>Has install</string>
+						<key>uid</key>
+						<string>33C8F2C3-5022-45E1-9BCE-BB018EB24E5C</string>
 					</dict>
 				</array>
 				<key>elselabel</key>
-				<string>else</string>
+				<string></string>
+				<key>hideelse</key>
+				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
 			<key>uid</key>
-			<string>02490CE9-13B5-4DF2-8925-51959002C029</string>
+			<string>D5973360-B453-4F19-BEC6-695832FF1756</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>tasksettings</key>
+				<dict/>
+				<key>taskuid</key>
+				<string>com.alfredapp.automation.core/screen-capture/screenshot.interactive</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.automation.task</string>
+			<key>uid</key>
+			<string>A2E6CA5F-BA54-489F-A6E2-A97F223F3F72</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>[[ -d "${alfred_workflow_cache}" ]] || mkdir "${alfred_workflow_cache}"
+
+tempFile="$alfred_workflow_cache/temp.png"
+
+mv "$1" "$tempFile"
+
+echo -n "$tempFile"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>4048A283-459F-41D6-8536-FB4A566BA632</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>26</integer>
+				<key>hotmod</key>
+				<integer>1179648</integer>
+				<key>hotstring</key>
+				<string>7</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>DE89967F-43E5-4EEC-8F93-059E5BA1FB96</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -245,98 +323,110 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>autopaste</key>
-				<false/>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>transient</key>
-				<false/>
+				<key>inputmode</key>
+				<integer>1</integer>
+				<key>outputmode</key>
+				<integer>1</integer>
+				<key>shortcut</key>
+				<string>OCR-v3</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
+			<string>alfred.workflow.automation.runshortcut</string>
 			<key>uid</key>
-			<string>1017A5FC-CE01-4FE6-982B-3E281E571C46</string>
+			<string>E9A9E33F-4D94-4AF5-BC40-38C018B27927</string>
 			<key>version</key>
-			<integer>3</integer>
+			<integer>1</integer>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>Get the text in the screenshot to the clipboard
+	<string># OCR
+&gt; Activate OCR keywords, select the screen area, and press Enter to immediately obtain the text.
 
-First run this command on a terminal:
+Use the built-in OCR, no need to install dependencies.
 
-1. brew install pngpaste
-2. npm install baidu-aip-sdk -g</string>
+1. support hotkey trigger, recommend setting the hotkey to `⌘ ⇧ 7`.
+2. type keyword `ocr` to trigger</string>
 	<key>uidata</key>
 	<dict>
-		<key>02490CE9-13B5-4DF2-8925-51959002C029</key>
+		<key>4048A283-459F-41D6-8536-FB4A566BA632</key>
 		<dict>
+			<key>note</key>
+			<string>move screenshot</string>
 			<key>xpos</key>
-			<integer>380</integer>
+			<real>780</real>
 			<key>ypos</key>
-			<integer>75</integer>
-		</dict>
-		<key>1017A5FC-CE01-4FE6-982B-3E281E571C46</key>
-		<dict>
-			<key>xpos</key>
-			<integer>605</integer>
-			<key>ypos</key>
-			<integer>295</integer>
+			<real>195</real>
 		</dict>
 		<key>763B39BE-E24D-4449-A0E3-C2E2021623EC</key>
 		<dict>
 			<key>xpos</key>
-			<integer>25</integer>
+			<real>30</real>
 			<key>ypos</key>
-			<integer>50</integer>
+			<real>50</real>
 		</dict>
-		<key>7FA8077C-0313-4570-8753-BEA7E7026A7B</key>
+		<key>85F97DB5-3EC6-4AE2-BD8A-E53075B998BF</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>9</integer>
+			<key>xpos</key>
+			<real>210</real>
+			<key>ypos</key>
+			<real>50</real>
+		</dict>
+		<key>A2E6CA5F-BA54-489F-A6E2-A97F223F3F72</key>
 		<dict>
 			<key>xpos</key>
-			<integer>610</integer>
+			<real>590</real>
 			<key>ypos</key>
-			<integer>15</integer>
-		</dict>
-		<key>9EE38889-E5FF-4F8B-9808-748DFEEEACD8</key>
-		<dict>
-			<key>note</key>
-			<string>drop error msg prefix</string>
-			<key>xpos</key>
-			<integer>480</integer>
-			<key>ypos</key>
-			<integer>30</integer>
+			<real>175</real>
 		</dict>
 		<key>C0F55B7B-E2B9-4FF2-972C-E1E1FEC24322</key>
 		<dict>
 			<key>xpos</key>
-			<integer>615</integer>
+			<real>1215</real>
 			<key>ypos</key>
-			<integer>165</integer>
+			<real>335</real>
 		</dict>
-		<key>C67E2790-A8FC-4FBC-8FE7-2A5CD9D012ED</key>
+		<key>D1CABD85-A795-45F0-B22D-BE7AB8B76884</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>9</integer>
+			<key>xpos</key>
+			<real>785</real>
+			<key>ypos</key>
+			<real>45</real>
+		</dict>
+		<key>D5973360-B453-4F19-BEC6-695832FF1756</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>9</integer>
+			<key>xpos</key>
+			<real>455</real>
+			<key>ypos</key>
+			<real>75</real>
+		</dict>
+		<key>DE89967F-43E5-4EEC-8F93-059E5BA1FB96</key>
 		<dict>
 			<key>xpos</key>
-			<integer>220</integer>
+			<real>35</real>
 			<key>ypos</key>
-			<integer>55</integer>
+			<real>260</real>
+		</dict>
+		<key>E9A9E33F-4D94-4AF5-BC40-38C018B27927</key>
+		<dict>
+			<key>xpos</key>
+			<real>990</real>
+			<key>ypos</key>
+			<real>345</real>
 		</dict>
 	</dict>
-	<key>variables</key>
-	<dict>
-		<key>API_KEY</key>
-		<string>T239ORnllCtLAPlbqum5UQSB</string>
-		<key>APP_ID</key>
-		<string>20034870</string>
-		<key>SECRET_KEY</key>
-		<string>8K5jaGZ6MMxgjwf9VGHc9oUZXRMFCIOX</string>
-	</dict>
+	<key>userconfigurationconfig</key>
+	<array/>
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>1.1</string>
+	<string>3.1</string>
 	<key>webaddress</key>
-	<string>https://1991421.cn</string>
+	<string>https://github.com/alanhg/alfred-workflows/tree/master/ocr</string>
 </dict>
 </plist>

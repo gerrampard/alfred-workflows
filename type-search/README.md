@@ -3,8 +3,10 @@ Find npm packages that have type declarations, either bundled or on Definitely T
 based on https://www.typescriptlang.org/dt/search
 
 
-![](https://img.shields.io/badge/version-v0.2-green?style=for-the-badge)
-[![](https://img.shields.io/badge/download-click-blue?style=for-the-badge)](https://github.com/alanhg/alfred-workflows/raw/master/type-search/Type%20Search.alfredworkflow)
+
+[![](https://img.shields.io/badge/version-v0.2-green?style=for-the-badge)](https://img.shields.io/badge/version-v0.2-green?style=for-the-badge)
+[![](https://img.shields.io/badge/download-click-blue?style=for-the-badge)](https://github.com/alanhe421/alfred-workflows/raw/master/type-search/Type%20Search.alfredworkflow)
+
 
 
 
@@ -18,7 +20,7 @@ based on https://www.typescriptlang.org/dt/search
 
 ## 实际效果
 
-![](./screenshot.gif)
+![](screenshots/screenshot.gif)
 
 ## 安装
 

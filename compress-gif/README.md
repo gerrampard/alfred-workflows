@@ -1,18 +1,34 @@
-Compress your GIF
+# Compress
+
+> Compress your GIF/Mov/MP4, support scale to convert compress ratio
 
 
-## install
+## requirement
 
-- brew install gifsicle
+### GIF
 
-if you need image-compress
-
-- brew install jq
-- visit https://tinypng.com/developers, get your api key
+`brew install gifsicle`
 
 
-![](https://img.shields.io/badge/version-v2.0-green?style=for-the-badge)
-[![](https://img.shields.io/badge/download-click-blue?style=for-the-badge)](https://github.com/alanhg/alfred-workflows/raw/master/compress-gif/Compress.alfredworkflow)
+### Image
+
+`brew install jq`
+
+visit https://tinypng.com/developers, get your api key
+
+tinypng pricing
+
+![https://i.imgur.com/NQTEs5s.jpg](https://i.imgur.com/NQTEs5s.jpg)
+
+### Mov/Mp4
+
+`brew install ffmpeg`
+
+
+
+[![](https://img.shields.io/badge/version-v3.1-green?style=for-the-badge)](https://img.shields.io/badge/version-v3.1-green?style=for-the-badge)
+[![](https://img.shields.io/badge/download-click-blue?style=for-the-badge)](https://github.com/alanhe421/alfred-workflows/raw/master/compress-gif/Compress.alfredworkflow)
+
 
 
 
@@ -24,7 +40,7 @@ Select the file and invoke the compress command or use file action
 
 - support colors/scale setting [only work for GIF]
 
-![](./screenshot.gif)
+![](screenshots/screenshot.gif)
 
 ## install
 
@@ -35,7 +51,7 @@ if you need image-compress
 - brew install jq
 - visit https://tinypng.com/developers, get your api key
 - api key setting
-  ![](./screenshot_2.jpeg)
+  ![](screenshots/screenshot_2.jpeg)
 
 ## notice
 for image compress, 500 free limit/per month
